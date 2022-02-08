@@ -1,0 +1,91 @@
+<br>
+  <div class="row justify-content-center">
+      <div class="col-lg-8">
+          <div class="card">
+              <div class="card-body">
+                
+                <h1 style="text-align: center;">Casas Registradas</h1>
+              
+                  <mat-form-field appearance="standard">
+                      <mat-label>Filtrar</mat-label>
+                      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+                    </mat-form-field>
+
+                    <span>
+                      <button mat-button color="primary" class="button">Registrar</button>
+                    </span>                   
+
+                  <table mat-table [dataSource]="datasource" class="mat-elevation-z8" >
+
+                            <ng-container matColumnDef="houseId">
+                              <th mat-header-cell *matHeaderCellDef> id </th>
+                              <td mat-cell *matCellDef="let element"> {{element.houseId}} </td>
+                            </ng-container>
+                        
+                            <ng-container matColumnDef="urbanizationId">
+                              <th mat-header-cell *matHeaderCellDef> Urbanización </th>
+                              <td mat-cell *matCellDef="let element"> {{element.urbanizationId}} </td>
+                            </ng-container>
+                      
+                            <ng-container matColumnDef="userId">
+                              <th mat-header-cell *matHeaderCellDef> Usuario </th>
+                              <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+                            </ng-container>
+                        
+                            <ng-container matColumnDef="mz">
+                                <th mat-header-cell *matHeaderCellDef> Mz </th>
+                                <td mat-cell *matCellDef="let element"> {{element.mz}} </td>
+                              </ng-container>
+                          
+                              <ng-container matColumnDef="villa">
+                                <th mat-header-cell *matHeaderCellDef> Villa </th>
+                                <td mat-cell *matCellDef="let element"> {{element.villa}} </td>
+                              </ng-container>
+                        
+                              <ng-container matColumnDef="phoneNumber">
+                                <th mat-header-cell *matHeaderCellDef> Celular </th>
+                                <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+                              </ng-container>
+
+                              <ng-container matColumnDef="notes">
+                                <th mat-header-cell *matHeaderCellDef> Notas </th>
+                                <td mat-cell *matCellDef="let element"> {{element.notes}} </td>
+                              </ng-container>
+
+                              <ng-container matColumnDef="fullAddress">
+                                <th mat-header-cell *matHeaderCellDef> Dirección </th>
+                                <td mat-cell *matCellDef="let element"> {{element.fullAddress}} </td>
+                              </ng-container>
+                          
+                            <ng-container matColumnDef="accion">
+                              <th mat-header-cell *matHeaderCellDef> Acción </th>
+                              <td mat-cell *matCellDef="let element">                     
+                                <button mat-button color="primary" class="button">Editar</button>
+                                <button mat-button color="primary" class="buttonNegro">Eliminar</button>
+                                  <!--button mat-raised-button (click)="eliminar(element)"><mat-icon>delete</mat-icon></button-->                  
+                              </td>
+                            </ng-container>
+                    
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      
+                    </table>
+                    
+                    <mat-paginator [pageSizeOptions]="[10, 20]"
+                aria-label="Select page of periodic elements">
+              </mat-paginator>
+
+          
+              </div>
+          </div>
+      </div>
+    <!--  
+      <div class="col-lg-4" *ngIf="loading">
+          <div class="card">
+              <div class="card-body" >
+                  <app-crud-categoria></app-crud-categoria>
+              <div> poner los slash
+          <div> poner los slash
+      <div> poner los slash
+    -->
+  </div>

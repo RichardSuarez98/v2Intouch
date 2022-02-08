@@ -1,0 +1,49 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.mat-sidenav-container{
+height: 100%;
+}
+
+.chevron-button{
+transition: 300ms ease-in-out;
+transform: rotate(0deg);
+right: 0;
+float: right;
+position: absolute;
+color: white;
+}
+
+.chevron-button.rotated{
+transform: rotate(180deg);
+}
+
+.expaaVent{
+margin-left: 73px;
+}
+
+.cursorMarCol{
+margin-left: 50px;
+color: white;
+cursor: pointer;
+}
+
+
+.colorNavbar{
+  background: linear-gradient(to right, #F6B668, #F48353);
+  background: linear-gradient(to right, #FCDF6B, #F99742);
+  background: linear-gradient(to right, #339CE9, #1D5BDF);
+  background: linear-gradient( #1B1464);
+}
+
+
+.circular--square {
+  margin: 15px;
+  width: 45px;
+  height:45px;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+}

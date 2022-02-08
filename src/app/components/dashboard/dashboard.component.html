@@ -1,0 +1,87 @@
+<mat-toolbar class="colorNavbar">
+    <img src="assets/urbanpasss.png" style="width: 60px;
+    height:60px;"/>
+    <img src="assets/urbanlogo.png" style="height: 35px;"/>
+    <span class="example-spacer"></span>
+    <img class="circular--square" src="assets/richard.jpg" />
+        <span style="color: white;">  Bienvenido Richard Suárez </span>
+        
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" style="color: white;">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Salir</span>
+      </button>
+  </mat-menu>
+  
+    <!--button (click)="logout()"mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon style="color: white;">logout</mat-icon>
+      </button-->
+</mat-toolbar>
+
+
+<mat-sidenav-container autosize>
+     <!--#494b74-->
+    <mat-sidenav #sidenav mode="side" opened="true" style="background-color: rgb(20, 20, 20);">
+
+        <mat-nav-list >
+
+            <mat-list-item>
+                <mat-icon  mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated':isExpanded}">chevron_right</mat-icon>
+            </mat-list-item>
+<!--------------------------HOME   ------------------------->
+            <mat-list-item style="color: white;">
+                <mat-icon mat-list-icon class="" routerLink="/dashboard">home</mat-icon>
+                <span *ngIf="isExpanded" routerLink="/dashboard">Inicio</span>
+            </mat-list-item>
+<!--------------------------CASA   ------------------------->
+            <mat-list-item style="color: white;" >
+                <mat-icon mat-list-icon class=""  routerLink="/dashboard/casa" >home</mat-icon>
+                <span *ngIf="isExpanded">House<mat-icon (click)="expanVenta = !expanVenta " class="expaaVent" >expand_more</mat-icon></span>               
+            </mat-list-item>
+            <h3 class="cursorMarCol" *ngIf="expanVenta" routerLink="/dashboard/registrarcasa">Registrar una casa</h3>
+            <h3 class="cursorMarCol" *ngIf="expanVenta" routerLink="/dashboard/consultarcasa">Consulta una casa</h3>
+<!--------------------------Urbanization   ------------------------->
+            <mat-list-item style="color: white;">
+                <mat-icon mat-list-icon class="" routerLink="/dashboard/urbanizacion">location_city</mat-icon>  
+                <span *ngIf="isExpanded" >Urbanización<mat-icon (click)="expan = !expan " style="margin-left: 50px">expand_more</mat-icon></span>          
+            </mat-list-item>
+            <h3 class="cursorMarCol" *ngIf="expan" mat-menu-item routerLink="/dashboard/registrarurbanizacion">Registrar Urbanización</h3>     
+            <h3 class="cursorMarCol" *ngIf="expan" routerLink="/dashboard/consultarurbanizacion">Consultar Urbanización</h3>
+<!--------------------------USUARIO   ------------------------->           
+            <mat-list-item style="color: white;">
+                <mat-icon mat-list-icon class="" routerLink="/dashboard/usuarios">person</mat-icon>
+                <span *ngIf="isExpanded">Usuario<mat-icon (click)="expanPersona = !expanPersona " style="margin-left: 60px">expand_more</mat-icon></span>
+            </mat-list-item>
+            <h3 class="cursorMarCol" *ngIf="expanPersona" routerLink="/dashboard/listarpersona">Registar Usuario</h3>     
+            <h3 class="cursorMarCol" *ngIf="expanPersona" routerLink="/dashboard/usuario">Consultar Usuario</h3>
+<!--------------------------ADMINISTRACION   ------------------------->
+            <mat-list-item style="color: white;">
+                <mat-icon mat-list-icon class="" routerLink="/dashboard/roles">admin_panel_settings</mat-icon>
+                <span *ngIf="isExpanded">Roles<mat-icon (click)="expanroles = !expanroles " style="margin-left: 60px">expand_more</mat-icon></span>
+            </mat-list-item>
+            <h3 class="cursorMarCol" *ngIf="expanroles" routerLink="/dashboard/listarpersona">Registrar Rol</h3>     
+        </mat-nav-list> 
+
+    </mat-sidenav>
+
+    <!--app-navbar></app-navbar--> <!--aqui iba el componente reutilizado de navbar-->
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    
+</mat-sidenav-container>
