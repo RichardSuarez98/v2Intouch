@@ -14,6 +14,8 @@ import { CrudUrbanizacionComponent } from './urbanization/crud-urbanizacion/crud
 import { ConsultarUrbanizacionComponent } from './urbanization/consultar-urbanizacion/consultar-urbanizacion.component';
 import { ListarCasaComponent } from './casa/listar-casa/listar-casa.component';
 import { CrudCasaComponent } from './casa/crud-casa/crud-casa.component';
+import { CrudUsuarioComponent } from './usuario/crud-usuario/crud-usuario.component';
+import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { CrudCasaComponent } from './casa/crud-casa/crud-casa.component';
     CrudUrbanizacionComponent,
     ConsultarUrbanizacionComponent,
     ListarCasaComponent,
-    CrudCasaComponent
+    CrudCasaComponent,
+    CrudUsuarioComponent,
+    ListarUsuarioComponent
   ],
   imports: [
     CommonModule,
